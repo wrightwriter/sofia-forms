@@ -1962,50 +1962,79 @@ vec3 oklch2oklab(vec3 oklch)
 vec3 rgb2oklch(vec3 rgb) { return oklab2oklch(rgb2oklab(rgb)); }
 vec3 oklch2rgb(vec3 oklch) { return oklab2rgb(oklch2oklab(oklch)); }
 
+vec3 rgb2hsl(vec3 c) {
+  float maxC = max(c.r, max(c.g, c.b));
+  float minC = min(c.r, min(c.g, c.b));
+  float l = (maxC + minC) * 0.5;
+  if (maxC == minC) return vec3(0.0, 0.0, l);
+  float d = maxC - minC;
+  float s = l > 0.5 ? d / (2.0 - maxC - minC) : d / (maxC + minC);
+  float h;
+  if (maxC == c.r)      h = (c.g - c.b) / d + (c.g < c.b ? 6.0 : 0.0);
+  else if (maxC == c.g) h = (c.b - c.r) / d + 2.0;
+  else                  h = (c.r - c.g) / d + 4.0;
+  return vec3(h / 6.0, s, l);
+}
+
+float hue2rgb(float p, float q, float t) {
+  if (t < 0.0) t += 1.0;
+  if (t > 1.0) t -= 1.0;
+  if (t < 1.0/6.0) return p + (q - p) * 6.0 * t;
+  if (t < 1.0/2.0) return q;
+  if (t < 2.0/3.0) return p + (q - p) * (2.0/3.0 - t) * 6.0;
+  return p;
+}
+
+vec3 hsl2rgb(vec3 c) {
+  if (c.y == 0.0) return vec3(c.z);
+  float q = c.z < 0.5 ? c.z * (1.0 + c.y) : c.z + c.y - c.z * c.y;
+  float p = 2.0 * c.z - q;
+  return vec3(hue2rgb(p, q, c.x + 1.0/3.0),
+              hue2rgb(p, q, c.x),
+              hue2rgb(p, q, c.x - 1.0/3.0));
+}
+
 void main() {
   vec2 uv = gl_FragCoord.xy/iResolution;
   vec4 orig = texture2D(tex0, uv);
-  vec4 dist = texture2D(tex0, uv);
-
-  vec4 col = mix(orig, dist, dist);
 
   gl_FragColor = orig;
 
   return;
 
-  vec3 lch = rgb2oklch(col.rgb);
+  // vec3 lch = rgb2oklch(col.rgb);
 
-  vec4 influence = vec4(1. + sin(uTime)*0.3,0.,0.,0.);
+  // vec4 influence = vec4(1. + sin(uTime)*0.3,0.,0.,0.);
 
-  float magic = lch.r*influence.r + lch.g*influence.g + lch.b*influence.b + influence.a;
-
-
-  vec3 a =vec3(0.6, 0., 0.2);
-  vec3 b =vec3(0.7, 0.1, 0.7);
-  vec3 c =vec3(1., 0., 1.);
-
-  vec3 choose = c;
-
-  choose = mix(choose, a, smoothstep(0., 0.3, length(magic - 0.15)));
-  choose = mix(choose, b, smoothstep(0., 0.3, length(magic - 0.5 )));
-  choose = mix(choose, c, smoothstep(0., 0.5, length(magic - 0.8)));
+  // float magic = lch.r*influence.r + lch.g*influence.g + lch.b*influence.b + influence.a;
 
 
-  /*
-  if (fract(magic)<0.33) {
-    choose = a;
-  }
-  else if (fract(magic)<0.66) {
-    choose = b;
-  }
-  else {
-    choose = c;
-  }
-  */
+  // vec3 a =vec3(0.6, 0., 0.2);
+  // vec3 b =vec3(0.7, 0.1, 0.7);
+  // vec3 c =vec3(1., 0., 1.);
 
-  col = oklch2rgb(choose).rgbb;
-  col.w = 1.0;
-  gl_FragColor = col;
+  // vec3 choose = c;
+
+  // choose = mix(choose, a, smoothstep(0., 0.3, length(magic - 0.15)));
+  // choose = mix(choose, b, smoothstep(0., 0.3, length(magic - 0.5 )));
+  // choose = mix(choose, c, smoothstep(0., 0.5, length(magic - 0.8)));
+
+
+  // /*
+  // if (fract(magic)<0.33) {
+  //   choose = a;
+  // }
+  // else if (fract(magic)<0.66) {
+  //   choose = b;
+  // }
+  // else {
+  //   choose = c;
+  // }
+  // */
+
+  // col = oklch2rgb(choose).rgbb;
+  // col.w = 1.0;
+  // gl_FragColor = col;
 }
 `,SA=`
 precision mediump float;
