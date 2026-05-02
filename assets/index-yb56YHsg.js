@@ -7154,13 +7154,11 @@ window.__p5_initialized||(window.__p5_initialized=1,new Ga(e=>{let t=[1,1]
 e.setup=()=>{window.q5=e,window.cos=Math.cos,window.sin=Math.sin,window.exp=Math.exp,window.pow=Math.pow,window.round=Math.round,window.floor=Math.floor,window.max=Math.max,window.min=Math.min,window.abs=Math.abs,window.random=Math.random,window.pi=Math.acos(-1),window.tau=2*pi,window.mix=(e,t,r)=>t*r+e*(1-r)
 {q5.colorMode(q5.RGB,1),q5.pixelDensity(1),q5.frameRate(60)
 const r=window.devicePixelRatio||1,n=window.__render_scale??1,i=document.createElement("canvas"),s=i.getContext("webgl2")||i.getContext("webgl"),o=s?s.getParameter(s.MAX_TEXTURE_SIZE):4096,a=e_?Math.floor(e.windowWidth*Rx):Math.floor(e.windowWidth*n/r),u=e_?Math.floor(e.windowHeight*Rx):Math.floor(e.windowHeight*n/r)
-window.__sf_debug={maxTex:o,rawW:a,rawH:u,dpr:r,isMobile:e_},console.log("[sf] maxTex",o,"raw",a,u,"clamped",t[0],t[1])
-const l=document.createElement("div")
-l.id="sf-dbg",l.style.cssText="position:fixed;top:0;left:0;z-index:99999;background:rgba(0,0,0,.8);color:#0f0;font:11px monospace;padding:6px;pointer-events:none;white-space:pre",l.textContent=`maxTex=${o} raw=${a}x${u} clamped=${Math.min(a,o)}x${Math.min(u,o)} dpr=${r}`,document.body.appendChild(l),t[0]=Math.min(a,o),t[1]=Math.min(u,o),window.res=t
-const h=q5.createCanvas(t[0],t[1],q5.WEBGL)
-h.parent("app"),window.realres=[h.elt.width,h.elt.height],window.sequencer=new bx,Wx=new Tx,Xx=new Fx(Wx,sequencer),window.render_context=Xx
-const c=new Mx
-window.gui=c,c.ctrls_html_elem.style.display="none",c.html_elem_time.style.display="none"}{Kx=gui.add_slider("volume"),Kx.val=window.__release_mode?1:0
+t[0]=Math.min(a,o),t[1]=Math.min(u,o),window.res=t
+const l=q5.createCanvas(t[0],t[1],q5.WEBGL)
+l.parent("app"),window.realres=[l.elt.width,l.elt.height],window.sequencer=new bx,Wx=new Tx,Xx=new Fx(Wx,sequencer),window.render_context=Xx
+const h=new Mx
+window.gui=h,h.ctrls_html_elem.style.display="none",h.html_elem_time.style.display="none"}{Kx=gui.add_slider("volume"),Kx.val=window.__release_mode?1:0
 const e=gui.add_slider("render scale")
 e.min=.1,e.max=2,e.step=.05,e.val=1,window.slider_scale=e,Yx=gui.add_toggle("movie mode"),Yx.val=1,Jx=gui.add_button("\u23f8 Pause",()=>{Qx=!Qx,window.is_paused=Qx,Jx.val=Qx?"\u25b6 Play":"\u23f8 Pause"}),window.toggle_movie_mode=Yx,window.slider_volume=Kx,window.is_paused=0}{const e=document.createElement("canvas").getContext("2d")
 new FontFace("caivun-m",`url(${Bx})`).load().then(e=>document.fonts.add(e)),new FontFace("geologica-m",`url(${Lx})`).load().then(e=>document.fonts.add(e))
