@@ -7190,7 +7190,8 @@ e.bindTexture(e.TEXTURE_2D,b),e.texParameteri(e.TEXTURE_2D,e.TEXTURE_MIN_FILTER,
 const x=e.createBuffer(),_=e.createVertexArray?e.createVertexArray():null
 return Hx(e,x,_,[t,r]),{gl:e,buf:s,vao:o,prog_fb:a,prog_fbm:l,prog_composite:u,prog_logo:v,tex_text:h,tex_logo:b,logo_buf:x,logo_vao:_,logo_ready:0,fbo_ping:c,fbo_ping_half:f,fbo_fbm:g,fbo_lut:y}}(r,t[0],t[1],e_)
 window.rgl=i
-const s={caivun_font:null,geologica_font:null,rgl:i,ping:0,measure_ctx:e,text_g:q5.createGraphics(q5.width,q5.height),mouse_prev:[0,0],mouse_delta_smooth:[0,0],mobile_tap_time:0}
+const s={caivun_font:null,geologica_font:null,rgl:i,ping:0,measure_ctx:e,text_g:(()=>{const e=q5.createGraphics(q5.width,q5.height)
+return e.pixelDensity(1),e})(),mouse_prev:[0,0],mouse_delta_smooth:[0,0],mobile_tap_time:0}
 window.draw_state=s,q5.loadFont(Bx).then(e=>{s.caivun_font=e,window.__text_dirty=1}),q5.loadFont(Lx).then(e=>{s.geologica_font=e,window.__text_dirty=1})
 const o=new Image
 o.src=Ox,o.decode().then(()=>{const e=i.gl
