@@ -111,14 +111,55 @@
         text-align: right;
         margin: 0 auto;
       }
-      #sf-panel .sf-date {
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        color: #000;
-        margin-top: 1.2rem;
+      #sf-panel .sf-date-warmup {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 3rem;
         margin-bottom: 0;
-        font-family: 'helvetica-roman', Helvetica, Arial, sans-serif;
+        gap: 1rem;
       }
+      #sf-panel .sf-warmup-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        align-items: flex-start;
+      }
+      #sf-panel .sf-warmup-label {
+        font-family: 'helvetica-roman', Helvetica, Arial, sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        color: #000;
+      }
+      #sf-panel .sf-venue-date {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.4rem;
+        flex-shrink: 0;
+        margin-top: 0.4rem;
+      }
+      #sf-panel .sf-venue-label {
+        font-family: 'helvetica-roman', Helvetica, Arial, sans-serif;
+        font-size: 1.2rem;
+        color: #000;
+        font-weight: normal;
+        text-decoration: none;
+      }
+      #sf-panel .sf-venue-label:hover { text-decoration: underline; }
+      #sf-panel .sf-date {
+        font-size: 1.9rem;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        color: #000;
+        font-family: 'helvetica-roman', Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      #sf-panel .sf-sss-link { display: block; padding: 0.25rem 0; transition: background 0.2s; }
+      #sf-panel .sf-sss-img { display: block; width: 11rem; height: auto; transition: filter 0.2s; }
+      #sf-panel .sf-sss-link:hover { background: #000; }
+      #sf-panel .sf-sss-link:hover .sf-sss-img { filter: invert(1); }
       #sf-panel .sf-venue {
         display: inline-block;
         margin-top: 0.8rem;
@@ -221,7 +262,7 @@
     <script src="./assets/opt-panel.js?v=14"></script>
     <script src="./assets/info-panel.js?v=2"></script>
     <script src="./assets/logos-overlay.js?v=1"></script>
-    <script type="module" crossorigin src="./assets/index-yb56YHsg.js"></script>
+    <script type="module" crossorigin src="./assets/index-BpS6cHI8.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BcalNeTS.css">
   </head>
   <body>
@@ -232,8 +273,17 @@
       <div id="sf-panel">
         <button id="sf-close" aria-label="close">×</button>
         <div class="sf-title">Sofia<br>Forms</div>
-        <div class="sf-date">16 may 2026</div>
-        <div class="sf-divider" style="margin-top:0.8rem;"></div>
+        <div class="sf-date-warmup">
+          <div class="sf-warmup-row" style="padding-top:0.3rem;margin-left:-0.4rem;">
+            <span class="sf-warmup-label" style="margin-left:0.5rem;font-weight:700;">Warmup for</span>
+            <a class="sf-sss-link" href="https://synthsymposium.com" target="_blank" rel="noopener noreferrer"><img class="sf-sss-img" alt="Sofia Synth Symposium"></a>
+          </div>
+          <div class="sf-venue-date" style="padding-top:0.2rem;">
+            <a class="sf-venue-label" href="https://maps.app.goo.gl/QGJkZJTK4HVRqx4e7" target="_blank" rel="noopener noreferrer">Resonator</a>
+            <div class="sf-date">MAY 16 2026</div>
+          </div>
+        </div>
+        <div class="sf-divider" style="margin-top:-1.2rem;"></div>
 
         <div class="sf-section">
           <div class="sf-body">A single-day hangout, workshop and jam session where multidisciplinary artists gather to showcase their art, workflows and share knowledge.</div>
@@ -266,10 +316,11 @@
         <div class="sf-section">
           <div class="sf-section-title">Schedule</div>
           <div class="sf-body"><strong>Daytime</strong> — Resonator<br><strong>Evening jam session</strong> — Atelieto</div>
+          <div class="sf-body" style="opacity:0.5; margin-top:0.5rem;">More details coming soon.</div>
         </div>
 
         <div class="sf-section">
-          <a class="sf-venue" href="https://maps.app.goo.gl/QGJkZJTK4HVRqx4e7" target="_blank" rel="noopener noreferrer">
+          <a class="sf-venue" style="margin-bottom:0;" href="https://maps.app.goo.gl/QGJkZJTK4HVRqx4e7" target="_blank" rel="noopener noreferrer">
             <div class="sf-venue-name">Resonator</div>
             <div class="sf-venue-addr">13 "20 April" Str., 1606, Sofia, Bulgaria</div>
           </a>
@@ -277,10 +328,6 @@
             <div class="sf-venue-name">Atelieto</div>
             <div class="sf-venue-addr">ul. "Tsar Samuil" 50, Sofia</div>
           </a>
-        </div>
-        <div class="sf-section">
-          <div class="sf-divider"></div>
-          <div class="sf-body" style="opacity:0.5;">More details coming soon.</div>
         </div>
 
         <div class="sf-social">
