@@ -1,4 +1,5 @@
-!function(){function n(){const n=document.getElementById("sf-backdrop")
+!function(){function n(){if(window.__promo_mode)return
+const n=document.getElementById("sf-backdrop")
 if(!n)return
 let e=0
 function t(){n.classList.add("open"),history.pushState({sfPanel:1},""),window.innerHeight>window.innerWidth&&(e=1,window.is_paused=1,window.q5?.noLoop())}function o(){n.classList.remove("open"),e&&(e=0,window.is_paused=0,window.q5?.loop())}n.addEventListener("click",e=>{e.target===n&&o()}),document.getElementById("sf-close").addEventListener("click",o)

@@ -226,7 +226,7 @@
         letter-spacing: 0.01em;
         font-family: ui-sans-serif, system-ui, -apple-system, Helvetica, Arial, sans-serif;
       }
-      #sf-panel .sf-body a { color: inherit; text-decoration: underline; text-decoration-color: rgba(0,0,0,0.3); }
+      #sf-panel .sf-body a, #sf-panel .sf-list a { color: #000; text-decoration: underline; text-decoration-color: rgba(0,0,0,0.3); }
       #sf-panel .sf-body strong { color: rgba(0,0,0,0.85); font-weight: 600; }
       #sf-panel .sf-list {
         font-size: 0.9rem;
@@ -257,12 +257,13 @@
       #sf-panel, #sf-panel * { user-select: text !important; }
       #sf-panel *::selection { background: #000; color: #fff; }
     </style>
+    <script src="./assets/promo-overlay.js?v=1"></script>
     <script src="./assets/webgl-fallback.js?v=16"></script>
     <script src="./assets/perf-overlay.js?v=14"></script>
     <script src="./assets/opt-panel.js?v=14"></script>
     <script src="./assets/info-panel.js?v=2"></script>
     <script src="./assets/logos-overlay.js?v=1"></script>
-    <script type="module" crossorigin src="./assets/index-9n91HXDb.js"></script>
+    <script type="module" crossorigin src="./assets/index-6L-xY4Qi.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BcalNeTS.css">
   </head>
   <body>
@@ -286,37 +287,63 @@
         <div class="sf-divider" style="margin-top:-1.2rem;"></div>
 
         <div class="sf-section">
-          <div class="sf-body">A single-day hangout, workshop and jam session where multidisciplinary artists gather to showcase their art, workflows and share knowledge.</div>
+          <div class="sf-body">A single-day hangout, workshop and party where multidisciplinary artists gather to showcase their art, workflows and share knowledge. Warmup for Sofia Synth Symposium 2026 on June 12-14!</div>
         </div>
         <div class="sf-section">
           <div class="sf-body">All forms of art are welcome — the medium matters less than the person behind it and what they're trying to express. Whether you are a musician looking to visualize your music, someone curious about modular synths who never got hands-on, or a shader artist looking for a soundtrack — this is the place.</div>
         </div>
 
         <div class="sf-section">
-          <div class="sf-section-title">What you can expect</div>
-          <div class="sf-body">A wide variety of short talks, open discussions and people to meet.<br>The day winds down into an open HDMI/audio cable jam session at the afterparty — bring a laptop, a synth whatever you've got.</div>
+          <div class="sf-section-title" style="font-size:1rem;">✦ Daytime Event Talks ✦</div>
+          <ul class="sf-list" style="list-style:none;padding-left:0;">
+            <li>▸ <strong><a href="https://www.instagram.com/ltnc.mp3/" target="_blank" rel="noopener noreferrer">LTNC</a></strong> - Simple but groovy</li>
+            <li>▸ <strong><a href="https://www.instagram.com/petrusenik/" target="_blank" rel="noopener noreferrer">Nikolay Petroussenko</a></strong> - Body Calligraphy</li>
+            <li>▸ <strong><a href="https://www.instagram.com/mrvux/" target="_blank" rel="noopener noreferrer">Julien Vulliet / mrvux (FR)</a></strong> - Design under constraint</li>
+            <li>▸ <strong><a href="https://www.instagram.com/lva.ctrl/" target="_blank" rel="noopener noreferrer">LVA</a></strong> - Art should be dangerous</li>
+            <li>▸ <strong><a href="https://www.instagram.com/ciosai/" target="_blank" rel="noopener noreferrer">CIOSAI (TW)</a></strong> - Intro to Strudel - Procedural rhythm</li>
+            <li>▸ <strong><a href="https://www.instagram.com/re.verbox/" target="_blank" rel="noopener noreferrer">Case of Collective Madness</a></strong> - Presentation of the electro-acoustic instruments REverb Box</li>
+            <li>▸ <strong><a href="https://www.instagram.com/antonindelorient/" target="_blank" rel="noopener noreferrer">Antonin Delorient</a></strong> - Analog motion painting</li>
+            <li>▸ <strong><a href="https://patchstorage.com/author/100yan/" target="_blank" rel="noopener noreferrer">Stoyan Kostadinov</a></strong> - Strange loops, VCV Rack</li>
+            <li>▸ <strong><a href="https://www.instagram.com/artefact0001/" target="_blank" rel="noopener noreferrer">ArteFactor</a></strong> - Sampling and spectral Max4Live plugins</li>
+            <li>▸ <strong><a href="https://www.instagram.com/daudio.dev/" target="_blank" rel="noopener noreferrer">Dessy</a></strong> - audio &amp; dev platform @ daudio::dev</li>
+            <li>▸ <strong><a href="https://www.linkedin.com/in/penkov/" target="_blank" rel="noopener noreferrer">Gheorgi Penkov</a></strong> - Intro to the embedoscene</li>
+            <li>▸ <strong><a href="https://www.instagram.com/pkamenarsky/" target="_blank" rel="noopener noreferrer">Philip Kamenarsky</a></strong> - Мodular synthesis on the web</li>
+            <li>▸ <strong><a href="https://www.instagram.com/wrightwrighter/" target="_blank" rel="noopener noreferrer">Petar Guglev / wrighter</a></strong> - Storytelling through abstract art</li>
+            <li>▸ <strong><a href="https://www.youtube.com/@logixoul" target="_blank" rel="noopener noreferrer">Stefan Monov</a></strong> - Multiscale Desmoothing - A journey from Photoshop effect to realtime simulation</li>
+          </ul>
+        </div>
+
+        <div class="sf-divider" style="width:100%;margin:1.6rem 0;"></div>
+
+        <div class="sf-section">
+          <div class="sf-section-title" style="font-size:1rem;">✦ Afterparty ✦</div>
         </div>
 
         <div class="sf-section">
-          <div class="sf-section-title">Want to give a talk or join the jam?</div>
-          <div class="sf-body">Our format is short talks during the day, then the open jam session in the evening. We're open to new participants for both — you can grab us on the day of the event, but ideally drop us a line at <a href="mailto:sofia.forms.sf@gmail.com">sofia.forms.sf@gmail.com</a> beforehand. It's going to be laid back - no need for something seriously thought out.</div>
-        </div>
-
-        <div class="sf-section">
-          <div class="sf-section-title">Some confirmed talks</div>
-          <ul class="sf-list">
-            <li>workflows for live audio performance</li>
-            <li>different methods for audio visualization</li>
-            <li>procedural music</li>
-            <li>procedural visual art</li>
-            <li>building your own analog and digital instruments</li>
+          <div class="sf-section-title" style="font-size:0.85rem;">⟿ Audio</div>
+          <ul class="sf-list" style="list-style:none;padding-left:0;">
+            <li>▸ <strong><a href="https://www.instagram.com/hederahellix/" target="_blank" rel="noopener noreferrer">glasoveteVIchuvam (BG/NL)</a></strong> - voice, electronics, field recordings, video</li>
+            <li>▸ <strong><a href="https://www.instagram.com/ciosai/" target="_blank" rel="noopener noreferrer">CIOSAI (TW)</a></strong> - strudel, shader audio</li>
+            <li>▸ <strong><a href="https://www.instagram.com/wrightwrighter/" target="_blank" rel="noopener noreferrer">wrighter</a></strong> - strudel</li>
+            <li>▸ <strong><a href="https://www.instagram.com/pkamenarsky/" target="_blank" rel="noopener noreferrer">Ф</a></strong> - custom WASM/Faust modular synth, visuals</li>
+            <li>▸ <strong><a href="https://www.instagram.com/lva.ctrl/" target="_blank" rel="noopener noreferrer">LVA</a></strong> - voice, Ableton, video, interactive music technology</li>
+            <li>▸ <strong><a href="https://www.instagram.com/avramov.b/" target="_blank" rel="noopener noreferrer">Changing Perspectives</a></strong> - tape manipulation, DIY instruments</li>
+            <li>▸ <strong><a href="https://www.instagram.com/re.verbox/" target="_blank" rel="noopener noreferrer">CASE OF COLLECTIVE MADNESS</a></strong> - electro-acoustic instrument REverb Box</li>
+            <li>▸ <strong><a href="https://www.instagram.com/artefact0001/" target="_blank" rel="noopener noreferrer">ArteFactor</a></strong> - Max 4 Live</li>
+            <li>▸ <strong><a href="https://www.instagram.com/daudio.dev/" target="_blank" rel="noopener noreferrer">Dessy</a></strong> - electronics</li>
+            <li>▸ <strong><a href="https://www.instagram.com/kristiyan59/" target="_blank" rel="noopener noreferrer">hy</a> ft. <a href="https://www.instagram.com/amokk.rgb/" target="_blank" rel="noopener noreferrer">amokk</a></strong> - electronics</li>
+            <li>▸ <strong><a href="https://www.instagram.com/ltnc.mp3/" target="_blank" rel="noopener noreferrer">LTNC</a></strong> - live loop, video</li>
           </ul>
         </div>
 
         <div class="sf-section">
-          <div class="sf-section-title">Schedule</div>
-          <div class="sf-body"><strong>Daytime</strong> — Resonator<br><strong>Evening jam session</strong> — Atelieto</div>
-          <div class="sf-body" style="opacity:0.5; margin-top:0.5rem;">More details coming soon.</div>
+          <div class="sf-section-title" style="font-size:0.85rem;">⟿ Visuals</div>
+          <ul class="sf-list" style="list-style:none;padding-left:0;">
+            <li>▸ <strong><a href="https://www.instagram.com/wrightwrighter/" target="_blank" rel="noopener noreferrer">wrighter</a></strong> - custom audio-visual software</li>
+            <li>▸ <strong><a href="https://www.instagram.com/mrvux/" target="_blank" rel="noopener noreferrer">mrvux (FR)</a></strong> - custom audio-visual software</li>
+            <li>▸ <strong><a href="https://www.instagram.com/amokk.rgb/" target="_blank" rel="noopener noreferrer">amokk</a> ft. <a href="https://www.instagram.com/kristiyan59/" target="_blank" rel="noopener noreferrer">hy</a></strong> - analog video</li>
+            <li>▸ <strong><a href="https://www.instagram.com/pkamenarsky/" target="_blank" rel="noopener noreferrer">Ф</a></strong> - procedural shader visuals</li>
+          </ul>
         </div>
 
         <div class="sf-section">

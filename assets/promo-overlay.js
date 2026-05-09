@@ -1,0 +1,2 @@
+!function(){function e(){const e=document.getElementById("sf-backdrop")
+e&&(e.style.display="none")}new URLSearchParams(window.location.search).has("promo")&&(window.__release_mode=1,window.__promo_mode=1,"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e(),document.addEventListener("keydown",e=>{"ArrowRight"===e.key&&(window.__promo_advance=1,window.__text_dirty=1),"ArrowLeft"===e.key&&(window.__promo_advance=-1,window.__text_dirty=1)}))}()

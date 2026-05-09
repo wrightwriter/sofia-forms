@@ -4,4 +4,4 @@ n.textContent="\n    #sf-logos {\n      position: fixed;\n      bottom: 1.5rem;\
 const e=document.createElement("a")
 e.id="sf-logos",e.href="https://stargaze.group",e.target="_blank",e.rel="noopener noreferrer"
 const t=document.createElement("img")
-function o(){document.head&&document.body&&(document.head.appendChild(n),document.body.appendChild(e),window.__stargaze_url&&(t.src=window.__stargaze_url),e.addEventListener("click",n=>n.stopPropagation()))}t.className="sf-stargaze-img",t.alt="Stargaze",e.appendChild(t),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",o):o()}()
+function o(){document.head&&document.body&&(window.__promo_mode||(document.head.appendChild(n),document.body.appendChild(e),window.__stargaze_url&&(t.src=window.__stargaze_url),e.addEventListener("click",n=>n.stopPropagation())))}t.className="sf-stargaze-img",t.alt="Stargaze",e.appendChild(t),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",o):o()}()
